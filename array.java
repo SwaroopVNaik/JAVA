@@ -27,7 +27,7 @@
 public class array{
     public static void main(String[] args) {
         int [] eid; // declaration
-        eid = new int [4]; // creation
+        eid = new int [4]; // creation (size is mandatory)
 
         // initializaton
         eid[0] = 101;
@@ -41,11 +41,33 @@ public class array{
             
         }
 
+        System.out.println("-----------------------------------------------------------------------------------");
 
-        String [] enames = {"Aprillia RS457", "CBR 350", "Ninja 500" };
+        String [] enames;
+
+        enames = new String[5];
+
+        enames[0] = "Aprillia rs457";
+        enames[1] = "CBR 350";
+        enames[2] = "ninja 500";
+
+        // System.out.println(enames[0]);
+        // System.out.println(enames[1]);
+        // System.out.println(enames[2]);
+        // System.out.println(enames[3]);
+        // System.out.println(enames[4]);
 
         for (String ename : enames) {
             System.out.println(ename);
         }
+
+        double [] prices = {99.9, 199.9, 289.9, 339.9, 499.9};
+
+        System.out.println(prices.length); // to find array size using .length
+
+        String name = "SwaroopVNaik";
+
+        System.out.println(name.length()); // to find String size use method length()
+
     }
 }
