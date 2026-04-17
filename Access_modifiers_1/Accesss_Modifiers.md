@@ -195,9 +195,3 @@ default → 📦
 private → 🔒
 
 ---
-
-🔥 This version is optimized for:
-
-* Quick revision
-* Interview recall
-* Strong mental clarity
