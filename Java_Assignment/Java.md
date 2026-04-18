@@ -131,3 +131,229 @@
 ##### 17) Initial Value of an Object reference (instance Variable) ?
 
 - Default Value is NULL 
+
+##### 18) what are the eight primitive data types ? 
+
+- byte 
+- short 
+- int 
+- long 
+- float 
+- double
+- char 
+- boolean
+
+#### 19) Explain diffence between primitive datatypes and reference data type ? 
+
+| Feature        | Primitive        | Reference             |
+| -------------- | ---------------- | --------------------- |
+| What it stores | Actual value     | Address of object     |
+| Memory         | Stack            | Heap                  |
+| Size           | Fixed            | Not fixed             |
+| Speed          | Faster           | Slower                |
+| Methods        | Not available    | Available             |
+| Examples       | int, float, char | String, Array, Object |
+
+#### 20) what is autoboxing in java ? 
+
+- Auto boxing is a process of converting the primitive data type into its corresponding wrapper class Object 
+- This is done automatically by java (no manual coding needed)
+- “value → object (automatic conversion)”
+
+#### 21) what are eight primitive data types and their default values ? 
+
+- byte       ->   0 
+- short      ->   0
+- int        ->   0
+- long       ->   0L
+- float      ->   0.0f
+- double     ->   0.0d
+- char       ->   null
+- boolean    ->   true/false 
+
+#### 22) what is the default value of the boolean data type in java ? 
+
+- The default value of the boolean data type in java is -> True / False
+
+#### 23) what is the size of int datatype in java ? 
+
+- The size of int datatype in java is (4 bytes)
+
+#### 24) what is the difference between float and double datatypes ? 
+
+| Feature      | **float**                  | **double**                   |
+| ------------ | -------------------------- | ---------------------------- |
+| Size         | 4 bytes (32-bit)           | 8 bytes (64-bit)             |
+| Precision    | Less precise (~6–7 digits) | More precise (~15–16 digits) |
+| Default type | ❌ Not default              | ✅ Default decimal type    |
+| Suffix       | `f` or `F` required        | No suffix needed             |
+| Memory       | Uses less memory           | Uses more memory             |
+| Usage        | When memory is limited     | When accuracy is important   |
+
+- example :
+```java 
+float a = 5.5f;   // must use 'f'
+double b = 5.5;   // default decimal
+```
+
+#### 25) Explain the long data type and how to denote a long literal ?
+
+- Long is used to store large integer values 
+- The size of long is 8 bytes (64 bits)
+- range -> -2^83 to 2^63 - 1
+
+- we use long when int is not enough to store large integer values 
+- Example : Population, timestamps, large counters 
+
+- To denote long literal we need use L or l at the end of the number 
+- Example : 
+```java 
+long num_1 = 100000L;
+long num_2 = 5000l;
+```
+#### 26) how to convert double to float in java ? 
+
+- The convertion of double to float in java can be doneby using the **typecasting**
+
+double => 8 bytes 
+float => 4 bytes
+
+- Syntax :
+ ```java
+ float variable = (float) doubleValue;
+ ```
+- Example : 
+```java
+double d = 10.75
+float f = (float) d;
+system.out.println(f); 10.75
+```
+#### 27) how convert a String to an int in java ?
+
+- To convert string to an int in java we use Integer.parseInt() 
+- here parseInt() = returns int
+
+- example : 
+```java 
+String s = "10";
+int i = Integer.parseInt(s); // converting string to integer 
+system.out.println(i);
+```
+##### 28) what is the differnce between break and continue statements in loops ?
+
+- #### break : completely stops the loop 
+- Loop terminates immediately 
+- control goes outside the loop
+
+Example : 
+```java 
+for(int i = 1; i <= 5; i++){
+  if(i == 3){
+    break;
+  }
+  system.out.println(i);
+}
+```
+when i = 3, loop stops fully
+
+output : 
+```
+1
+2 
+```
+- #### continue : skips current iteration
+- skips the current loop step
+- moves to next iteration 
+
+```java
+for(int i = 1; i <= 5; i++){
+  if(i == 3){
+    continue;
+  }
+  system.out.println(i)
+}
+```
+Output : 
+```
+1
+2
+4
+5
+```
+- Differences => 
+
+| Feature      | break 🚫                             |continue ⏭                              |
+| ------------ | ------------------------------------ | --------------------------------------- |
+| Purpose      | Stops loop completely                | Skips current iteration                 |
+| Loop status  | Ends loop                            | Loop continues                          |
+| Control flow | Goes outside loop                    | Goes to next iteration                  |
+| Use case     | When condition met → stop everything | When condition met → skip only one step |
+
+##### 29) Explain the difference between int and integer in java ?
+
+| Feature       | `int` (Primitive)   | `Integer` (Wrapper Class)         |
+| ------------- | ------------------- | --------------------------------- |
+| Type          | Primitive data type | Object (class from `java.lang`)   |
+| Storage       | Stores actual value | Stores reference to an object     |
+| Default Value | `0`                 | `null`                            |
+| Null Allowed  | ❌ Not allowed       | ✅ Allowed                         |
+| Performance   | Faster, less memory | Slower, more memory               |
+| Collections   | ❌ Cannot be used    | ✅ Can be used (`ArrayList`, etc.) |
+| Methods       | ❌ No methods        | ✅ Has utility methods             |
+| Example       | `int a = 10;`       | `Integer b = 10;`                 |
+
+Example : 
+
+```java
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // int example
+        int a = 10;
+        System.out.println("int value: " + a);
+
+        // Integer example
+        Integer b = 20;
+        System.out.println("Integer value: " + b);
+
+        // Using Integer in ArrayList
+        // Creating ArrayList type is Integer => (we can't use int, only Integer)
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+
+        System.out.println("ArrayList: " + list);
+
+        // Autoboxing & Unboxing
+        Integer obj = a;   // int → Integer
+        int num = obj;     // Integer → int
+
+        System.out.println("Autoboxed: " + obj);
+        System.out.println("Unboxed: " + num);
+
+        // Null example
+        Integer x = null;
+        System.out.println("Integer can be null: " + x);
+
+        // int cannot be null (uncommenting below will cause error)
+        // int y = null;
+    }
+}
+
+```
+
+##### 30) What is the difference between local variables and instance variables ?
+
+| Feature            | Local Variable                      | Instance Variable                  |
+| ------------------ | ----------------------------------- | ---------------------------------- |
+| **Declaration**    | Inside method / block / constructor | Inside class, outside methods      |
+| **Scope**          | Only within the method              | Throughout the class               |
+| **Lifetime**       | Exists during method execution      | Exists as long as object exists    |
+| **Default Value**  | No default value (must initialize)  | Has default value (0, null, false) |
+| **Memory**         | Stored in stack                     | Stored in heap                     |
+| **Access**         | Cannot be accessed outside method   | Accessed using object              |
+| **Keyword Needed** | No keyword                          | No keyword (but belongs to object) |
+
